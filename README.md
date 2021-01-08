@@ -19,6 +19,9 @@
 
 ：テストセットの各テストオーディオには、23種のうち少なくとも1つが含まれている必要はないがある可能性大
 
+:0.3秒のような非常に短い持続時間のtpセグメントがいくつかあるのを見ました、1）人がこれらをそのような精度/精度でどのようにラベル付けしたのか2）
+
+:https://www.kaggle.com/c/rfcx-species-audio-detection/discussion/203394
 
 
 
@@ -33,6 +36,10 @@ flacファイルを再生してオーディオサンプルの長さが1分であ
 つまり、song1とsong４で分けた方がいい精度が出そう
 
 :https://github.com/CVxTz/COLA_pytorch
+
+:https://www.kaggle.com/c/rfcx-species-audio-detection/discussion/198371
+
+
 
 
 
