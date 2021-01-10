@@ -46,6 +46,9 @@ flacファイルを再生してオーディオサンプルの長さが1分であ
 
 
 
+![image](https://user-images.githubusercontent.com/59402913/104118426-468ab180-536c-11eb-898a-ed80ae46d82d.png)
+
+
 
 
 # 中期SMART（目標）
