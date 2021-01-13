@@ -128,6 +128,14 @@ R（適切）
 
 T（期限）
 
+<img width="856" alt="スクリーンショット 2021-01-13 12 52 05" src="https://user-images.githubusercontent.com/59402913/104404504-27736600-559e-11eb-8759-2e9fb9d68779.png">
+
+https://www.kaggle.com/hidehisaarai1213/introduction-to-sound-event-detection/comments
+
+
+
+：サンプリング周波数は音を取得する頻度を表していて、これが高いほどより高い音(周波数が高い音)にも対応できます。48000Hzである必要ある？32000Hzにダウンサンプルしてもよくない？
+
 ==========================================================
 
 # 10/28
