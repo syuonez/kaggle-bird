@@ -136,6 +136,9 @@ https://www.kaggle.com/hidehisaarai1213/introduction-to-sound-event-detection/co
 
 ：サンプリング周波数は音を取得する頻度を表していて、これが高いほどより高い音(周波数が高い音)にも対応できます。48000Hzである必要ある？32000Hzにダウンサンプルしてもよくない？
 
+<img width="829" alt="スクリーンショット 2021-01-13 17 05 13" src="https://user-images.githubusercontent.com/59402913/104423494-84344800-55c1-11eb-81f8-e689ad34b0f7.png">
+
+
 ==========================================================
 
 # 10/28
