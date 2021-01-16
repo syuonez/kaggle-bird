@@ -632,6 +632,10 @@ def main(fold):
     filepath = os.path.join(FILE_DIR, "./config/config.yml")
     with open(filepath) as file:
         args = yaml.safe_load(file)#<=================
+                        
+    # train
+    with mlflow.start_run():
+        #train(train_df, config)
     ##################    
         
     seed_everithing(args.seed)
@@ -725,12 +729,12 @@ def main(fold):
         if args.epoch_scheduler:
             scheduler.step(epoch)
         
-        content = f"""
+        content = f"
                 {time.ctime()} \n
                 Fold:{args.fold}, Epoch:{epoch}, lr:{optimizer.param_groups[0]['lr']:.7}\n
                 Train Loss:{train_loss:0.4f} - LWLRAP:{train_avg['lwlrap']:0.4f}\n
-                Valid Loss:{valid_loss:0.4f} - LWLRAP:{valid_avg['lwlrap']:0.4f}\n
-        """
+                Valid Loss:{valid_loss:0.4f} - LWLRAP:{valid_avg['lwlrap']:0.4f}\n"
+                        
         print(content)
         with open(f'{args.save_path}/log_{args.exp_name}.txt', 'a') as appender:
             appender.write(content+'\n')
@@ -765,5 +769,5 @@ def main(fold):
 if __name__ == '__main__':
     start_time = time.time()
     print('%s: calling main function ... \n' % os.path.basename(__file__))
-    main()
+    main(fold = 0)
     print(f"\nsuccess! [{(time.time()-start_time)/60:.1f} min]")
