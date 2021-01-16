@@ -28,6 +28,11 @@ from torchlibrosa.augmentation import SpecAugmentation
 import timm
 from timm.models.efficientnet import tf_efficientnet_b0_ns
 
+
+import time
+from datetime import datetime, timedelta, timezone
+JST = timezone(timedelta(hours=+9), 'JST')
+
 def init_layer(layer):
     nn.init.xavier_uniform_(layer.weight)
 
@@ -757,3 +762,8 @@ def main(fold):
     test_pred_df.to_csv(os.path.join(args.save_path, f"fold-{args.fold}-submission.csv"), index=False)
     print(os.path.join(args.save_path, f"fold-{args.fold}-submission.csv"))
     
+if __name__ == '__main__':
+    start_time = time.time()
+    print('%s: calling main function ... \n' % os.path.basename(__file__))
+    main()
+    print(f"\nsuccess! [{(time.time()-start_time)/60:.1f} min]")
