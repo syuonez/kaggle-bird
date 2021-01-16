@@ -1,6 +1,7 @@
-# experiment_name  : "RoBERTaBase kaggle check"
-# bucket_name      : "kaggleops-bucket"
-# git_uri          : "https://github.com/yuooka/kaggleops-tutorial.git"
+experiment_name  : "PANN_e0"
+bucket_name      : "kaggleops-buckets"
+git_uri          : "https://github.com/syuonez/kaggle-bird.git"
+#"https://github.com/yuooka/kaggleops-tutorial.git"
 
 
 
