@@ -1,1 +1,66 @@
+# experiment_name  : "RoBERTaBase kaggle check"
+# bucket_name      : "kaggleops-bucket"
+# git_uri          : "https://github.com/yuooka/kaggleops-tutorial.git"
 
+
+
+# MODEL_TYPE       : "RoBERTaBaseSquad2"
+# SEED             : 100
+# TORCH_SEED       : 101
+# FOLD             : 5
+# FOLD_NUM         : 0
+# TRAIN_BATCH_SIZE : 24
+# VALID_BATCH_SIZE : 24
+# MAX_LEN          : 160
+# DROPOUT          : 0.0
+# WEIGHT           : False
+# SCHEDULER        : "get_linear_schedule_with_warmup"
+# BUCKET           : True
+# CAT_HIDDEN       : [-2]
+# QA_TASK          : True
+# LOSS_TYPE        : "CROSS_ENTROPY"
+# SWA              : True
+# LR               : 0.00005
+# WEIGHT_DECAY     : 0.001
+# WARMUP           : 0.01
+# EPOCHS           : 2
+# PRE_PROCESS      : True
+
+DEBUG : False
+
+exp_name : "SED_E0_5F_BASE"
+pretrain_weights : None 
+model_param : {
+    'encoder' : 'tf_efficientnet_b0_ns',
+    'sample_rate': 48000,
+    'window_size' : 512, #* 2, # 512 * 2
+    'hop_size' : 512, #345 * 2, # 320
+    'mel_bins' : 128, # 60
+    'fmin' : 0,
+    'fmax' : 48000 // 2,
+    'classes_num' : 24}
+
+period : 10
+seed : 42
+start_epcoh : 0 
+#     epochs : 50
+################
+freeze_epo : 0
+warmup_epo : 3
+cosine_epo : 46
+epochs : freeze_epo + warmup_epo + cosine_epo
+################
+lr : 1e-4
+batch_size : 16
+num_workers : 4
+early_stop : 15
+step_scheduler : False#True
+epoch_scheduler : True#False
+
+device : ('cuda' if torch.cuda.is_available() else 'cpu')
+train_csv : "train_folds.csv"
+test_csv : "test_df.csv"
+sub_csv : "../input/rfcx-species-audio-detection/sample_submission.csv"
+output_dir : "weights"
+train_data_path : "../input/rfcx-species-audio-detection/train"
+test_data_path : "../input/rfcx-species-audio-detection/test"
